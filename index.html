@@ -2,9 +2,6 @@
 <link rel="stylesheet" href="style.css">
 <div type="text" value="Hello World" id="myInput">
 <html>
-<head>
-  <meta name="payok" content="payok_verification"/></meta>
-</head>
 <body>
   <div class=bx2>
     <a href="#" class="b1"> Milky project </a>
@@ -37,34 +34,7 @@
     alert("Адреса сервера скопійована");
   }
 </script>
-<script>
-    function initServerData(serverIp,serverPort){
-        const serverIpElement = document.getElementById('server-ip');
-        serverIpElement.innerHTML = serverIp;
-        fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
-        .then(response => response.json())
-        .then(data => handleServerStatus(data));
-  
-        function handleServerStatus(data){
-            if(data.status=='error'){
-                console.log(data.error);
-                return false;
-            }
-            const motd = document.getElementById("motd");
-            motd.innerHTML = data.motd;
-
-            const playerCounter = document.getElementById("player-count");
-            playerCounter.innerHTML = data.players.now;
-
-            const logo = document.getElementById("server-icon");
-            logo.src = data.favicon;
-        } 
-    }
-
-    initServerData("play.dawn-mc.net","25565");
-</script>
 <script src="Assets\copyip2.js"></script>
-<script src="Assets\CORS.js"></script>
 </body>
 </div>
 </html>
