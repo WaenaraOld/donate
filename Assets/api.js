@@ -1,30 +1,12 @@
-use scpsl_api::server_info::{get, RequestParameters, Response};
-use std::env::var;
-use url::Url;
+fetch('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})
 
-#[tokio::main]
-async fn main() {
-    let account_id = var("21611")
-        .expect("Expected an account id in the environment")
-        .parse::<u64>()
-        .unwrap();
-    let api_key = var("ENeppKLJhYlqjjGllyxPaDNa").expect("Expected an account id in the environment");
+const options = {
+	method: 'POST',
+	headers: {
+	},
+};
 
-    let parameters = RequestParameters::builder()
-        .url(Url::parse("https://api.scpslgame.com/serverinfo.php").unwrap())
-        .id(account_id)
-        .key(api_key)
-        .players(true)
-        .build();
-
-    if let Response::Success(response) = get(&parameters).await.unwrap() {
-        println!(
-            "Total players on your servers: {}",
-            response
-                .servers()
-                .iter()
-                .map(|server| server.players_count().unwrap().current_players())
-                .sum::<u32>()
-        )
-    }
-}
+fetch('https://api.scpslgame.com/serverinfo.php?id=21611&key=ENeppKLJhYlqjjGllyxPaDNa&players=true', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
