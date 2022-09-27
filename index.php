@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <link rel="stylesheet" href="style.css">
 <div type="text" value="Hello World" id="myInput">
 <html>
