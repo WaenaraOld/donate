@@ -14,7 +14,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
+Permissions-Policy: interest-cohort=()
 Access-Control-Allow-Origin: *
 
 # Allow one concurrent deployment
