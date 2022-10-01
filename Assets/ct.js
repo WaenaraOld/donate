@@ -10,3 +10,4 @@ async function getpl() {
 
 const api_url = 'https://api.codetabs.com/v1/proxy/?quest=https://api.scpslgame.com/serverinfo.php?id=21611&key=ENeppKLJhYlqjjGllyxPaDNa&players=true'
 getpl();
+setTimeout(function () { location.reload(1); }, 20000);
