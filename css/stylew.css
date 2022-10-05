@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(228, 228, 228);
+}
+
+
+
+.cardwait {
+    border-radius: 20px;
+    background-color: aliceblue;
+    width: 700px;
+    height: 400px;
+    margin-left: 700px;
+    margin-top: 300px;
+}
+.waitpic {
+    position: relative;
+    left: 250px;
+    top: -420px;
+}
+
+.hf {
+    text-align: center;
+    position: relative;
+    top: 130px;
+    font-size: 50px;
+    font-family:cursive;
+
+}
+.hf2 {
+    text-align: center;
+    position: relative;
+    top: 110px;
+    font-size: 30px;
+    font-family:cursive;
+
+}
